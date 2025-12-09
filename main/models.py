@@ -17,7 +17,7 @@ class Product(models.Model):
 	category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
 
 	name = models.CharField(max_length=100, db_index=True)
-	slug = models.SlugField(max_length=100, unique=100)
+	slug = models.SlugField(max_length=100, unique=True)
 	image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
 	description = models.TextField(blank=True)
 	sailerName = models.CharField(max_length=100, db_index=True)
@@ -25,7 +25,7 @@ class Product(models.Model):
 	price = models.DecimalField(max_digits=10, decimal_places=2)
 	available = models.BooleanField(default=True)
 	createdAt = models.DateTimeField(auto_now_add=True)
-	updateAt = models.DateTimeField(auto_now=True)
+	updatedAt = models.DateTimeField(auto_now=True)
 
 	class Meta: 
 		ordering = ('name',)
