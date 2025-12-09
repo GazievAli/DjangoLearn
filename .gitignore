@@ -1,6 +1,8 @@
 venv/
 .pylintrc
 __pycache__/
+products/
+products/*
 
 .vscode
 .idea
